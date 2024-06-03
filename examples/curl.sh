@@ -1,0 +1,33 @@
+#!/bin/bash
+
+curl --location 'http://localhost:8080/calculate' \
+--header 'Content-Type: application/json' \
+--data '{
+  "nodes": [
+    {
+      "value": 10,
+      "operation": "assign",
+      "dependencies": []
+    },
+    {
+      "value": 5,
+      "operation": "add",
+      "dependencies": [0]
+    },
+    {
+      "value": 2,
+      "operation": "assign",
+      "dependencies": []
+    },
+    {
+      "value": 0,
+      "operation": "subtract",
+      "dependencies": [2, 1]
+    },
+    {
+      "value": 3,
+      "operation": "multiply",
+      "dependencies": [3]
+    }
+  ]
+}'
